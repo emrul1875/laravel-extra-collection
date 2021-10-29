@@ -1,17 +1,16 @@
 {
-    "name": ":vendor/:package_name",
-    "description": ":package_description",
+    "name": "emrul1875/laravel-extra-collection",
+    "description": "An extra collection pacakge for Laravel",
     "keywords": [
-        ":vendor",
-        ":package_name"
+        "devemrul",
+        "extra"
     ],
-    "homepage": "https://github.com/:vendor/:package_name",
-    "license": ":license_composer",
-    "type": "library",
+    "homepage": "https://github.com/emrul1875/laravel_extra_collection",
+    "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Emrul Hassan",
+            "email": "emrul7427@gmail.com",
             "role": "Developer"
         }
     ],
@@ -20,35 +19,22 @@
         "illuminate/support": "^8.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0",
-        "phpunit/phpunit": "^9.0"
+
     },
     "autoload": {
         "psr-4": {
-            ":vendor_namespace_escaped\\": "src"
-        }
+            "Emrul1875\\LaravelExtraCollection\\": "src"
+        },
+        "files": [
+            "src/extra.php"
+        ]
     },
-    "autoload-dev": {
-        "psr-4": {
-            ":vendor_namespace_escaped\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit",
-        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
-
-    },
-    "config": {
-        "sort-packages": true
-    },
+    "minimum-stability": "dev",
     "extra": {
         "laravel": {
             "providers": [
-                ":vendor_namespace_escaped\\:studly_package_nameServiceProvider"
-            ],
-            "aliases": {
-                ":studly_package_name": ":vendor_namespace_escaped\\:studly_package_nameFacade"
-            }
+                "Emrul1875\\LaravelExtraCollection\\LaravelExtraCollectionServiceProvider"
+            ]
         }
     }
 }
