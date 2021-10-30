@@ -19,7 +19,7 @@ The package is auto-discovered!
 Add the service provider to `config/app.php`
 
 ```php
-// Usage description here
+
 Emrul1875\LaravelExtraCollection\LaravelExtraCollectionServiceProvider::class
 ```
 
@@ -240,7 +240,7 @@ $collection = collect([
     6,5,7,5,2,5,7,3,3
 ]);
 
-$updatedCollection = $collection->find(function($item) {
+$updatedCollection = $collection->findIndex(function($item) {
     return $item > 5;
 });
 
@@ -263,7 +263,7 @@ $collection = collect([
     ]
 ]);
 
-$updatedCollection = $collection->find(function($item) {
+$updatedCollection = $collection->findIndex(function($item) {
     return $item->age > 20;
 })
 
