@@ -1,4 +1,4 @@
-# Laravl Extra Collection
+# Laravel Extra Collection
 
 <!-- 
 [![Total Downloads](https://img.shields.io/packagist/dt/emrul1875/laravel-extra-collection.svg?style=flat-square)](https://packagist.org/packages/emrul1875/laravel-extra-collection) -->
@@ -101,7 +101,7 @@ $updatedCollection = $collection->appendValue(["balance" => " FCFA"]);
 
 `concatValue`
 
-The `concatValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional. First parameter receive new property name that should be added in the collection. Second parameter receives array of field name which exist in collection. Third parameter receives delimiter (commad ',' or space ' '). 
+The `concatValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional. First parameter receive new property name that should be added in the collection. Second parameter receives array of field name which exist in collection. Third parameter receives delimiter (comma `,` or space `' '`). 
 
 ```php
 <?php
