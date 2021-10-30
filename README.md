@@ -29,7 +29,11 @@ Emrul1875\LaravelExtraCollection\LaravelExtraCollectionServiceProvider::class
 
 ```php
 <?php
-The `prependValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional. First parameter receive an array or string. If your collection is sequential array you can pass string as a first parameter otherwise pass an array. The array should contain key and value pair where key will be the property name of collection which should be changed and value should be the text that needs to prepend with value. You can pass true or false in thrid parameter. By default it is false. If you pass true it will skip all property which has null value. 
+The `prependValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional.
+First parameter receive an array or string. If your collection is sequential array you can pass string as a
+first parameter otherwise pass an array. The array should contain key and value pair where key will be the
+property name of collection which should be changed and value should be the text that needs to prepend with
+value. You can pass true or false in thrid parameter. By default it is false. If you pass true it will skip all property which has null value. 
 
 $collection = collect([
     [
@@ -64,7 +68,12 @@ $updatedCollection = $collection->prependValue(["balance" => "USD ", "image": "h
 
 `appendValue`
 
-The `appendValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional. First parameter receive an array or string. If your collection is sequential array you can pass string as a first parameter otherwise pass an array. The array should contain key and value pair where key will be the property name of collection which should be changed and value should be the text value that needs to append with value. You can pass true or false in thrid parameter. By default it is false. If you pass true it will skip all property which has null value. 
+The `appendValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional.
+First parameter receive an array or string. If your collection is sequential array you can pass string as a
+first parameter otherwise pass an array. The array should contain key and value pair where key will be the
+property name of collection which should be changed and value should be the text value that needs to append with
+value. You can pass true or false in thrid parameter. By default it is false. If you pass true it will skip all
+property which has null value. 
 
 ```php
 <?php
@@ -101,9 +110,11 @@ $updatedCollection = $collection->appendValue(["balance" => " FCFA"]);
 
 `concatValue`
 
-The `concatValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional. First parameter receive new property name that should be added in the collection. Second parameter receives array of field name which exist in collection. Third parameter receives delimiter (comma `,` or space `' '`). 
+The `concatValue()` method receive 3 parameter. First 2 parameter is mandatory and 3rd parameter is optional.First parameter receive new property name that should be added in the collection. Second parameter receives
+array of field name which exist in collection. Third parameter receives delimiter (comma `,` or space `' '`). 
 
 ```php
+
 <?php
 
 $collection = collect([
