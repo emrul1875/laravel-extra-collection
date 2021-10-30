@@ -137,4 +137,139 @@ $updatedCollection = $collection->concatValue("fullname", ["title", "firstname",
 */
 
 ```
+
+`at`
+
+The `at()` method takes an integer value and returns the item at that index, allowing for positive and negative integers. Negative integers count back from the last item in the array.
+
+```php
+<?php
+
+$collection = collect([
+    6,5,7,5,2,5,7,3,3
+]);
+
+$updatedCollection = $collection->at(3)
+
+/*
+    5
+*/
+
+$collection = collect([
+    [
+        'title' => 'Mr.'
+        'firstname' => 'John',
+        'lastname' => 'Doe'
+    ],
+    [
+        'title' => 'Mr.'
+        'firstname' => 'Johny',
+        'lastname' => 'Doe'
+    ]
+]);
+
+$updatedCollection = $collection->at(1)
+
+/*
+    [
+        'title' => 'Mr.'
+        'firstname' => 'Johny',
+        'lastname' => 'Doe'
+    ]
+*/
+
+```
+
+`find`
+
+The `find()` method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, `null` is returned.
+
+```php
+<?php
+
+$collection = collect([
+    6,5,7,5,2,5,7,3,3
+]);
+
+$updatedCollection = $collection->find(function($item) {
+    return $item > 5;
+});
+
+/*
+    6
+*/
+
+$collection = collect([
+    [
+        'title' => 'Mr.'
+        'firstname' => 'John',
+        'lastname' => 'Doe',
+        'age' => 20
+    ],
+    [
+        'title' => 'Mr.'
+        'firstname' => 'Johny',
+        'lastname' => 'Doe',
+        'age' => 25
+    ]
+]);
+
+$updatedCollection = $collection->find(function($item) {
+    return $item->age > 15;
+})
+
+/*
+    [
+        'title' => 'Mr.'
+        'firstname' => 'John',
+        'lastname' => 'Doe',
+        'age' => 20
+    ],
+*/
+
+```
+
+`findIndex`
+
+The `findIndex()` method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+
+```php
+<?php
+
+$collection = collect([
+    6,5,7,5,2,5,7,3,3
+]);
+
+$updatedCollection = $collection->find(function($item) {
+    return $item > 5;
+});
+
+/*
+    0
+*/
+
+$collection = collect([
+    [
+        'title' => 'Mr.'
+        'firstname' => 'John',
+        'lastname' => 'Doe',
+        'age' => 20
+    ],
+    [
+        'title' => 'Mr.'
+        'firstname' => 'Johny',
+        'lastname' => 'Doe',
+        'age' => 25
+    ]
+]);
+
+$updatedCollection = $collection->find(function($item) {
+    return $item->age > 20;
+})
+
+/*
+    1
+*/
+
+```
 ### MIT

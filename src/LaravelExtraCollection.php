@@ -98,4 +98,34 @@ class LaravelExtraCollection extends Collection {
             return $this->collection;
         }
     }
+
+    public function at($index) {
+        if ($index > -1) {
+            return $this->collection[$index];
+        } else {
+            return $this->collection[$this->collection->count() + $index];
+        }
+    }
+
+    public function find($callback) {
+        $result = null;
+        foreach ($this->collection as $key => $value) {
+            $result = $callback($value, $key);
+            if ($result) {
+                return $value;
+            }
+        }
+        return null;
+    }
+
+    public function findIndex($callback) {
+        $result = null;
+        foreach ($this->collection as $key => $value) {
+            $result = $callback($value, $key);
+            if ($result) {
+                return $key;
+            }
+        }
+        return -1;
+    }
 }

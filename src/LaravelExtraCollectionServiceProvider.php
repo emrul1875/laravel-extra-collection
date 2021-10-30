@@ -22,6 +22,21 @@ class LaravelExtraCollectionServiceProvider extends ServiceProvider {
             $le = new LaravelExtraCollection($this);
             return $le->concatValue($propname, $arrayOfFields, $delim);
         });
+
+        Collection::macro('at', function ($index) {
+            $le = new LaravelExtraCollection($this);
+            return $le->at($index);
+        });
+
+        Collection::macro('find', function ($callback) {
+            $le = new LaravelExtraCollection($this);
+            return $le->find($callback);
+        });
+
+        Collection::macro('findIndex', function ($callback) {
+            $le = new LaravelExtraCollection($this);
+            return $le->findIndex($callback);
+        });
     }
 
     public function register() {
